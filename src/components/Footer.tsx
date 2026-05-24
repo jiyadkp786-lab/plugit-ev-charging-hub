@@ -40,8 +40,11 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Brand Information */}
         <div className="flex flex-col items-center md:items-start max-w-sm">
-          <span className="font-sans text-lg font-bold tracking-[0.25em] text-white">
-            PLUG<span className="text-white/60 font-light">IT</span>
+          <span
+            style={{ fontFamily: "'Ethnocentric', sans-serif", fontWeight: 700 }}
+            className="text-base md:text-lg tracking-[0.12em] text-white"
+          >
+            PLUG IT<span className="text-[#1a55cc] ml-1">EV</span>
           </span>
           <p className="text-white/40 text-xs tracking-wider mt-2 text-center md:text-left">
             Accelerating the transition to sustainable mobility.

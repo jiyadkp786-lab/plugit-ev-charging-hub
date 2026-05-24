@@ -211,7 +211,7 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
               </div>
             </div>
           ) : section.type === 'video-split' ? (
-            <div className="relative lg:absolute lg:inset-0 w-full bg-[#f4f4f4] text-neutral-900 flex flex-col justify-center items-center py-12 md:py-16 lg:py-10 px-6 md:px-10 lg:px-16">
+            <div className="relative lg:absolute lg:inset-0 w-full bg-[#f4f4f4] text-neutral-900 flex flex-col justify-center items-center py-12 md:py-16 lg:py-10 px-5 sm:px-10 lg:px-16">
               <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
                 
                 {/* Left Column: Simple & Standard EV Infographics in a White Card Box */}
@@ -220,7 +220,7 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="lg:col-span-5 flex flex-col gap-5 text-left transition-all duration-500"
+                  className="lg:col-span-5 flex flex-col gap-5 text-left transition-all duration-500 bg-white border border-neutral-200/60 p-5 sm:p-8 rounded-2xl shadow-sm"
                 >
                   <div>
                     <span className="text-xs tracking-[0.25em] text-[#1a55cc] font-semibold uppercase">
@@ -232,11 +232,11 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
                   </div>
 
                   {/* 2x2 Grid of Metrics */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 mt-2 border-t border-neutral-200 pt-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 sm:gap-y-8 mt-2 border-t border-neutral-200 pt-6">
                     
                     {/* Item 1: Market Growth & Future Adoption */}
-                    <div className="flex gap-3 items-start">
-                      <span className="text-3xl font-semibold text-[#1a55cc] tracking-tight flex-shrink-0">
+                    <div className="flex gap-4 items-start">
+                      <span className="text-2xl sm:text-3xl font-semibold text-[#1a55cc] tracking-tight flex-shrink-0 w-[72px] text-left">
                         +68%
                       </span>
                       <div className="flex flex-col">
@@ -250,8 +250,8 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
                     </div>
 
                     {/* Item 2: Fuel Cost & EV Savings */}
-                    <div className="flex gap-3 items-start">
-                      <span className="text-3xl font-semibold text-neutral-900 tracking-tight flex-shrink-0">
+                    <div className="flex gap-4 items-start">
+                      <span className="text-2xl sm:text-3xl font-semibold text-neutral-900 tracking-tight flex-shrink-0 w-[72px] text-left">
                         10x
                       </span>
                       <div className="flex flex-col">
@@ -265,8 +265,8 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
                     </div>
 
                     {/* Item 3: Highway Travel Infrastructure */}
-                    <div className="flex gap-3 items-start">
-                      <span className="text-3xl font-semibold text-neutral-900 tracking-tight flex-shrink-0">
+                    <div className="flex gap-4 items-start">
+                      <span className="text-2xl sm:text-3xl font-semibold text-neutral-900 tracking-tight flex-shrink-0 w-[72px] text-left">
                         18.5k
                       </span>
                       <div className="flex flex-col">
@@ -280,8 +280,8 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
                     </div>
 
                     {/* Item 4: Commercial EV Fleets */}
-                    <div className="flex gap-3 items-start">
-                      <span className="text-3xl font-semibold text-[#10b981] tracking-tight flex-shrink-0">
+                    <div className="flex gap-4 items-start">
+                      <span className="text-2xl sm:text-3xl font-semibold text-[#10b981] tracking-tight flex-shrink-0 w-[72px] text-left">
                         80%
                       </span>
                       <div className="flex flex-col">
