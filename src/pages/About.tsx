@@ -109,12 +109,12 @@ export const About: React.FC = () => {
               className="relative group"
             >
               {/* Timeline indicator node */}
-              <div className="absolute -left-[31px] md:-left-[55px] top-1.5 w-4 h-4 rounded-full bg-black border-2 border-white/20 group-hover:border-white transition-all duration-300 flex items-center justify-center">
+              <div className="absolute -left-[32px] md:-left-[56px] top-1.5 w-4 h-4 rounded-full bg-black border-2 border-white/20 group-hover:border-white transition-all duration-300 flex items-center justify-center">
                 <div className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-white transition-colors duration-300" />
               </div>
 
               {/* Date badge */}
-              <div className="absolute -left-[90px] md:-left-[150px] top-0 text-right w-16 md:w-24">
+              <div className="md:absolute md:-left-[150px] md:top-0 md:text-right md:w-24 mb-2 md:mb-0">
                 <span className="text-sm font-extrabold tracking-widest text-white/30 group-hover:text-white transition-colors duration-300">
                   {milestone.year}
                 </span>

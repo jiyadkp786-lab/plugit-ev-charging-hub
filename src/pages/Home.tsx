@@ -500,19 +500,19 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
                       </motion.div>
                     </AnimatePresence>
 
-                    <div className="mt-2 flex gap-4">
+                    <div className="mt-2 flex flex-col sm:flex-row gap-3 sm:gap-4">
                       <button
                         onClick={() => {
                           const whatsappUrl = `https://wa.me/918943573519?text=Hi,%20I'm%20interested%20in%20the%20${encodeURIComponent(currentCharger.title)}.%20Please%20help%20me%20find%20and%20purchase%20this%20charger.`;
                           window.open(whatsappUrl, '_blank');
                         }}
-                        className={`font-bold py-3.5 px-8 rounded-md text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer focus:outline-none shadow-sm text-white ${activeChargerIdx === 0 ? 'bg-gradient-to-r from-[#1a55cc] to-[#3e6ae1] hover:from-[#1648b8] hover:to-[#3258c3] shadow-[#1a55cc]/30 shadow-lg' : 'bg-[#171717] hover:bg-neutral-800'}`}
+                        className={`font-bold py-3.5 px-8 rounded-md text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer focus:outline-none shadow-sm text-white text-center ${activeChargerIdx === 0 ? 'bg-gradient-to-r from-[#1a55cc] to-[#3e6ae1] hover:from-[#1648b8] hover:to-[#3258c3] shadow-[#1a55cc]/30 shadow-lg' : 'bg-[#171717] hover:bg-neutral-800'}`}
                       >
                         FIND A CHARGER
                       </button>
                       <button
                         onClick={() => setActivePage('contact')}
-                        className="bg-white hover:bg-neutral-50 text-neutral-800 font-bold py-3.5 px-8 rounded-md text-xs tracking-wider uppercase border border-neutral-200 transition-all duration-300 cursor-pointer focus:outline-none shadow-sm"
+                        className="bg-white hover:bg-neutral-50 text-neutral-800 font-bold py-3.5 px-8 rounded-md text-xs tracking-wider uppercase border border-neutral-200 transition-all duration-300 cursor-pointer focus:outline-none shadow-sm text-center"
                       >
                         REQUEST QUOTE
                       </button>
@@ -521,6 +521,14 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
 
                   {/* Right Column: Charging Station Image with animations for Super Charger */}
                   <div className="lg:col-span-6 w-full h-[350px] md:h-[520px] flex items-center justify-center relative group">
+                    {/* Mobile/Tablet Screen-edge Navigation Arrow (aligned with image center) */}
+                    <button
+                      onClick={() => setActiveChargerIdx((prev) => (prev === chargersData.length - 1 ? 0 : prev + 1))}
+                      className="absolute right-[-8px] md:right-[-24px] top-1/2 -translate-y-1/2 z-30 p-2.5 md:p-3 rounded-full bg-white border border-neutral-200 text-neutral-800 shadow-lg hover:bg-neutral-50 active:scale-95 transition-all duration-300 cursor-pointer focus:outline-none lg:hidden"
+                      aria-label="Next Charger"
+                    >
+                      <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                    </button>
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={activeChargerIdx}
@@ -595,13 +603,13 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
 
                 </div>
 
-                {/* Screen-edge Right Navigation Arrow */}
+                {/* Desktop Screen-edge Right Navigation Arrow */}
                 <button
                   onClick={() => setActiveChargerIdx((prev) => (prev === chargersData.length - 1 ? 0 : prev + 1))}
-                  className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 p-2.5 md:p-3 rounded-full bg-white border border-neutral-200 text-neutral-800 shadow-lg hover:bg-neutral-50 hover:shadow-xl active:scale-95 transition-all duration-300 cursor-pointer focus:outline-none"
+                  className="hidden lg:block absolute right-6 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white border border-neutral-200 text-neutral-800 shadow-lg hover:bg-neutral-50 hover:shadow-xl active:scale-95 transition-all duration-300 cursor-pointer focus:outline-none"
                   aria-label="Next Charger"
                 >
-                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  <ChevronRight className="h-6 w-6" />
                 </button>
 
               </div>
@@ -783,7 +791,7 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
               <div className="h-8 md:h-16" />
             </div>
           ) : section.type === 'video' ? (
-            <div className="absolute inset-0 w-full h-full bg-black overflow-hidden">
+            <div className="relative lg:absolute lg:inset-0 w-full h-[75vh] md:h-[85vh] lg:h-full bg-black overflow-hidden">
               <video
                 ref={videoRef}
                 src={section.videoSrc}
@@ -796,7 +804,7 @@ export const Home: React.FC<HomeProps> = ({ setActivePage }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/50" />
               
               {/* Section Content */}
-              <div className="relative z-10 h-full flex flex-col justify-between items-center py-24 px-6 text-center">
+              <div className="relative z-10 h-full flex flex-col justify-between items-center py-12 md:py-24 px-6 text-center">
                 {/* Headers */}
                 <motion.div
                   initial={{ opacity: 0, y: -30 }}
